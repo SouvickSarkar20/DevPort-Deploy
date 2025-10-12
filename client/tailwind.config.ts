@@ -1,9 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  // ✅ Tailwind v4 syntax
   darkMode: "class",
-
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {

@@ -4,10 +4,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Terminal, Search, Download } from "lucide-react";
-
+import Navbar from "@/components/Navbar";
 import { toast } from "sonner";
 import {BASE_URL} from "@/config"
-import Navbar from "@/components/navbar";
 
 interface LogEntry {
   log: string;
@@ -87,7 +86,7 @@ const ProjectLogs = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar/>
+      <Navbar />
       <div className="pt-24 pb-12 px-4">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}

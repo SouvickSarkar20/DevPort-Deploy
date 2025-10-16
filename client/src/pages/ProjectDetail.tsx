@@ -2,14 +2,12 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
+import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Activity, Clock, Terminal } from "lucide-react";
-
+import Navbar from "@/components/Navbar";
 import { io, Socket } from "socket.io-client";
 import { toast } from "sonner";
 import { BASE_URL } from "@/config";
-import { Badge } from "@/components/ui/badge";
-import Navbar from "@/components/navbar";
 
 interface Deployment {
   id: string;
@@ -178,7 +176,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar/>
+      <Navbar />
       <div className="pt-24 pb-12 px-4">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}

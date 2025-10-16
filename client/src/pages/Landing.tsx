@@ -2,10 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Rocket, Zap, Shield, BarChart3, Terminal, Globe } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-
-
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Landing = () => {
   const features = [
@@ -51,7 +49,7 @@ const Landing = () => {
           <div className="animate-fade-in space-y-6 max-w-4xl mx-auto">
             <div className="inline-block">
               <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-                ✨ Ship faster with GitDeployr
+                ✨ Ship faster with DevPort-Deploy
               </span>
             </div>
             

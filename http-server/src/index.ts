@@ -41,25 +41,25 @@ io.on("connection", (socket) => {
 app.use(express.json());
 
 app.use("/api/auth", auth);
-// app.use("/api/deployment", deployment);
-// app.use("/api/logs", logsRouter);
-// app.use("/api/dashboard", dashboardRouter);
+app.use("/api/deployment", deployment);
+app.use("/api/logs", logsRouter);
+app.use("/api/dashboard", dashboardRouter);
 
-// Subscribe to all Redis log channels
-// async function initRedisSubscribe() {
-//   console.log("Subscribed to logs...");
-//   await subscriber.psubscribe("logs:*");
+Subscribe to all Redis log channels
+async function initRedisSubscribe() {
+  console.log("Subscribed to logs...");
+  await subscriber.psubscribe("logs:*");
 
-//   subscriber.on("pmessage", (_pattern, channel, message) => {
-//     console.log("Redis message received:", { channel, message });
-//     io.to(channel).emit("message", message);
-//   });
-// }
+  subscriber.on("pmessage", (_pattern, channel, message) => {
+    console.log("Redis message received:", { channel, message });
+    io.to(channel).emit("message", message);
+  });
+}
 
-// initRedisSubscribe();
+initRedisSubscribe();
 
 httpServer.listen(PORT, () => {
   console.log(`API + Socket.IO server running on port ${PORT}`);
 });
 
-// startWorker();
+startWorker();

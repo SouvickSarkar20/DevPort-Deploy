@@ -1,6 +1,6 @@
 import { Worker, Job } from "bullmq";
 import { prisma } from "../client/prisma";
-// import { ecsClient, config } from "../client/ecs";
+import { ecsClient, config } from "../client/ecs";
 import { connection } from "../client/queue";
 import { RunTaskCommand, DescribeTasksCommand } from "@aws-sdk/client-ecs";
 

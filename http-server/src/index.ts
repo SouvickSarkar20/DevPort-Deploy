@@ -3,11 +3,11 @@ import { Server } from "socket.io";
 import dotenv from "dotenv";
 import http from "http";
 import auth from "./routes/auth";
-// import { subscriber } from "./client/redis";
-// import deployment from "./routes/deployment";
-// import { startWorker } from "./worker/deploymentWorker";
-// import logsRouter from "./routes/logs";
-// import dashboardRouter from "./routes/dashboard";
+import { subscriber } from "./client/redis";
+import deployment from "./routes/deployment";
+import { startWorker } from "./worker/deploymentWorker";
+import logsRouter from "./routes/logs";
+import dashboardRouter from "./routes/dashboard";
 import cors from "cors";
 
 dotenv.config();
@@ -45,7 +45,7 @@ app.use("/api/deployment", deployment);
 app.use("/api/logs", logsRouter);
 app.use("/api/dashboard", dashboardRouter);
 
-Subscribe to all Redis log channels
+// Subscribe to all Redis log channels
 async function initRedisSubscribe() {
   console.log("Subscribed to logs...");
   await subscriber.psubscribe("logs:*");
